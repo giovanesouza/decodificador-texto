@@ -19,38 +19,45 @@
       </div>
 
       <section class="text-before">
-       
-        <textarea name="" id="text-left" placeholder="Digite seu texto"></textarea>
+        <textarea
+          name="typed-text"
+          id="text-left"
+          placeholder="Digite seu texto" autofocus
+        ></textarea>
 
         <div class="before-bottom">
-        
           <div class="info">
-              <img src="assets/images/info.png" alt="informação" />
-              <span>Apenas letras minúsculas e sem acento.</span>
+            <img src="assets/images/info.png" alt="informação" />
+            <span>Apenas letras minúsculas e sem acento.</span>
           </div>
 
           <div class="buttons">
-            <button class="btn bg-blue">Criptografar</button>
-            <button class="btn bg-light">Descriptografar</button>
+            <button class="btn bg-blue" id="btn-criptografar">Criptografar</button>
+            <button class="btn bg-light" id="btn-descriptografar">Descriptografar</button>
           </div>
         </div>
       </section>
 
       <section class="text-after">
-       
-        <!-- <textarea name="" id="text-right"></textarea> -->
 
-        <img src="assets/images/msg.svg" alt="Nenhuma mensagem encontrada" />
+        <div class="withoud-message">
+          <img src="assets/images/msg.svg" alt="Nenhuma mensagem encontrada" />
 
-        <div class="message">
           <h2>Nenhuma mensagem encontrada</h2>
           <p>
             Digite um texto que você deseja criptografar ou descriptografar.
           </p>
         </div>
 
-        <!-- <button class="btn bg-white">Copiar</button> -->
+        <div class="d-none" id="has-message">
+          <div id="text-right"></div>
+
+          <button class="btn bg-white" id="btn-copy">Copiar</button>
+        </div>
+
       </section>
     </main>
+
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

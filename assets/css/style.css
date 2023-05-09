@@ -33,7 +33,7 @@ body {
 /* Botões - Formatações gerais */
 
 .btn {
-  flex: 1;
+  /* flex: 1; */
   height: 6.7rem;
   padding: 2.4rem;
   border: 0.1rem solid var(--color-dark-blue);
@@ -47,17 +47,19 @@ body {
 
 /* Bg para botões */
 .bg-blue {
+  flex: 1;
   background: var(--color-dark-blue);
   color: var(--color-white);
 }
 
 .bg-light {
+  flex: 1;
   background: var(--bg-body);
   color: var(--color-dark-blue);
 }
 
 .bg-white {
-  flex: none;
+  width: 100%;
   background: var(--color-white);
   color: var(--color-dark-blue);
 }
@@ -102,7 +104,6 @@ main {
   outline: none;
 
   margin-top: 10rem;
-
 }
 
 #text-left,
@@ -144,9 +145,6 @@ main {
   /* Com a imagem = center */
   justify-content: center;
 
-  /* Sem a imagem => space-between */
-  /* justify-content: space-between; */
-
   background: var(--color-white);
   box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
   border-radius: 3.2rem;
@@ -155,14 +153,19 @@ main {
   text-align: center;
 }
 
+
+
 /* Textarea com o texto convertido */
 #text-right {
   width: 100%;
   height: 25rem;
-  /* height: 13.3rem; */
+
+  /* Quebra de texto */
+  word-wrap: break-word; 
   font-size: 2.4rem;
   font-weight: 400;
   line-height: 150%;
+  text-align: justify;
   color: var(--color-gray);
 
   margin: 2rem 0;
@@ -173,7 +176,16 @@ main {
 }
 
 /* msg => 'nenhuma msg encontrada */
-.message h2 {
+
+.withoud-message {
+  width: 100%;
+}
+
+.withoud-message img {
+  max-width: 100%;
+}
+
+.withoud-message h2 {
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 120%;
@@ -182,13 +194,31 @@ main {
 }
 
 /* msg => 'digite um texto...' */
-.message p {
+.withoud-message p {
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 150%;
   color: var(--color-gray);
   margin-bottom: 1rem;
 }
+
+
+/* Texto encriptado/desencriptado */
+.d-none {
+  display: none;
+}
+
+.has-message {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+
+
 
 /* RESPONSIVIDADE */
 
@@ -227,19 +257,19 @@ main {
 
   .text-after {
     width: 100%;
+    height: max-content;
+    padding: 2rem;
 
-    /* Altura só tem com a imagem */
-    /* height: 13.3rem; */
   }
 
-  .text-after img {
+  /* Oculta a imagem */
+  .withoud-message img {
     display: none;
   }
 
   #text-right {
     height: auto;
   }
-
 }
 
 /* Celular */
